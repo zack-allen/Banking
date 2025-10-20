@@ -1,0 +1,16 @@
+RewriteEngine on 
+RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+RewriteRule ^ /%1 [NC,L,R]
+
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^ %{REQUEST_URI}.php [NC,L]
+
+ErrorDocument 400 /Banking/error
+ErrorDocument 401 /Banking/error
+ErrorDocument 403 /Banking/error
+ErrorDocument 404 /Banking/error
+ErrorDocument 500 /Banking/error
+ErrorDocument 502 /Banking/error
+ErrorDocument 503 /Banking/error
+ErrorDocument 504 /Banking/error
+ErrorDocument 505 /Banking/error
